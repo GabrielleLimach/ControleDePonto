@@ -1,0 +1,8 @@
+server:
+  port: 9998
+logging:
+  level:
+    br.com.rh.batidas: debug
+spring:
+  jpa:
+    show-sql: true
