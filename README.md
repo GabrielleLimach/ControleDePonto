@@ -13,10 +13,9 @@ git@github.com:GabrielleLimach/COntroleDePonto.git
 
 ## 🛠️ Executando o projeto
 
-#### Após clonar o projeto, executar os seguintes comandos para criar as imagens e os containers do docker
+#### Após clonar o projeto, executar o projeto
 ```
-mvn package
-docker-compose up
+
 ```
 
 ## Testes
