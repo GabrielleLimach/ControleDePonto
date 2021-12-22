@@ -2,21 +2,22 @@ package br.com.rh.batidas.service.strategy;
 
 import br.com.rh.batidas.model.RegistroDePonto;
 import br.com.rh.batidas.model.enums.TipoRegistroPonto;
+import br.com.rh.batidas.model.exception.HorarioJaRegistradoException;
 import br.com.rh.batidas.utils.LocalDateUtils;
 
 import java.time.LocalDateTime;
 
 public class RegistroIntervalo implements Registro{
+
     @Override
     public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro) {
-        if(LocalDateUtils.diferencaEntreHoras(ponto.getDataHora(), registro) < 1)
-            return null;
-
         if(ponto.getIsRetornoAlmoco())
-            return montarRegistro(registro, false);
+            return TipoRegistroPonto.SAIDA.registroDaBatida().montarRegistro(registro, false);
 
-        return null;
+        if(LocalDateUtils.diferencaEntreHoras(ponto.getDataHora(), registro) < 1)
+            new HorarioJaRegistradoException("Deve haver no mínimo 1 hora de almoço");
 
+        return montarRegistro(registro, true);
     }
 
     @Override

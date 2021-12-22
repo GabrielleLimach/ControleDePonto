@@ -2,6 +2,7 @@ package br.com.rh.batidas.service.strategy;
 
 import br.com.rh.batidas.model.RegistroDePonto;
 import br.com.rh.batidas.model.enums.TipoRegistroPonto;
+import br.com.rh.batidas.model.exception.HorarioJaRegistradoException;
 
 import java.time.LocalDateTime;
 
@@ -9,9 +10,9 @@ public class RegistroSaida implements Registro{
 
     @Override
     public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro) {
+        if (ponto.getTipoRegistro().equals(TipoRegistroPonto.SAIDA))
+            new HorarioJaRegistradoException("Apenas 4 horários podem ser registrados por dia");
         return null;
-//            Apenas 4 horários podem ser registrados por dia
-        return montarRegistro(registro, false);
     }
 
     @Override

@@ -8,21 +8,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
-
+@RestController
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("api/v1/batidas")
-@RestController
 public class BatidasController {
 
     private final RegistroDePontoService registroDePontoService;
 
     @PostMapping
-    public ResponseEntity registrarHorario(@RequestParam("dataHora") String dataHora) {
+    public ResponseEntity registrarHorario(@RequestParam String dataHora) {
         registroDePontoService.registrarPonto(LocalDateUtils.toConvertStringLocalDateTime(dataHora));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
 }

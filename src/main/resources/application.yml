@@ -1,5 +1,5 @@
 server:
-  port: 9998
+  port: 9090
 logging:
   level:
     br.com.rh.batidas: debug

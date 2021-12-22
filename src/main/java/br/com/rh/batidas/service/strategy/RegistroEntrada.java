@@ -9,7 +9,7 @@ public class RegistroEntrada implements Registro{
 
     @Override
     public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro) {
-        return montarRegistro(registro, false);
+        return TipoRegistroPonto.INTERVALO.registroDaBatida().montarRegistro(registro, false);
     }
 
     @Override
