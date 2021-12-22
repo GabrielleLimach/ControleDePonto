@@ -4,7 +4,6 @@ package br.com.rh.batidas.service;
 import br.com.rh.batidas.model.RegistroDePonto;
 import br.com.rh.batidas.model.enums.TipoRegistroPonto;
 import br.com.rh.batidas.model.exception.FinalDeSemanaException;
-import br.com.rh.batidas.model.exception.HorarioJaRegistradoException;
 import br.com.rh.batidas.repository.RegistroDePontoRepository;
 import br.com.rh.batidas.utils.LocalDateUtils;
 import lombok.RequiredArgsConstructor;
