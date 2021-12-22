@@ -43,6 +43,6 @@ http://localhost:9999/swagger-ui.html
 
 ## ✒️ Autor
 * **Gabrielle Limach** - *Desenvolvimento do projeto* - [Gabrielle Limach](https://github.com/GabrielleLimach)
-* 
+
 ## Licença
 O código-fonte do site está licenciado sob a licença MIT, que você pode encontrar no arquivo LICENSE.
