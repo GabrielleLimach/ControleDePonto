@@ -11,7 +11,5 @@ public interface RegistroDePontoService {
 
     RegistroDePonto validarRegistroDePonto(LocalDateTime registro);
 
-    RegistroDePonto montarRegistro(LocalDateTime horario, TipoRegistroPonto tipoRegistroPonto, Boolean retorno);
-
     RegistroDePonto recuperarUltimoRegistroDePonto(LocalDateTime registro);
 }

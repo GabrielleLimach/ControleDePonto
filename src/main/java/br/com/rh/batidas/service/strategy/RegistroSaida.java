@@ -9,6 +9,8 @@ public class RegistroSaida implements Registro{
 
     @Override
     public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro) {
+        return null;
+//            Apenas 4 horários podem ser registrados por dia
         return montarRegistro(registro, false);
     }
 
