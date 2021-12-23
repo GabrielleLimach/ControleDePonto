@@ -13,10 +13,7 @@ git@github.com:GabrielleLimach/COntroleDePonto.git
 
 ## 🛠️ Executando o projeto
 
-#### Após clonar o projeto, executar o projeto
-```
-
-```
+#### Após clonar o projeto, basta executar o projeto
 
 ## Testes
 
@@ -31,7 +28,7 @@ Utilizado recursos do JUnit e Mockito para verificação dos endpoints e das res
 #### A documentação de api foi criada com o Swagger que pode ser acessada após a execução do projeto no link:
 
 ```
-http://localhost:9999/swagger-ui.html
+http://localhost:8080/swagger-ui.html
 ```
 
 ## 🛠️ Tecnologias Utilizadas
