@@ -69,11 +69,8 @@ public class ExceptionHandlerController{
 
     private ValidationErrorHandler geraValidationErrorHandler(HttpStatus httpStatus, Exception e, HttpServletRequest request) {
         return new ValidationErrorHandler(
-                LocalDateTime.now(),
                 httpStatus.value(),
-                httpStatus.name(),
-                e.getMessage(),
-                request.getServletPath());
+                e.getMessage());
     }
 
     private StandardErrorHandler geraStandarErrorHandler(HttpStatus httpStatus, Exception e, HttpServletRequest request) {
