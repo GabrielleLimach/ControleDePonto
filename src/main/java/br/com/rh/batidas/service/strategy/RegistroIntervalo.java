@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 public class RegistroIntervalo implements Registro{
 
     @Override
-    public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro) {
+    public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro){
         if(ponto.getIsRetornoAlmoco())
             return TipoRegistroPonto.SAIDA.registroDaBatida().montarRegistro(registro, false);
 
         if(LocalDateUtils.diferencaEntreHoras(ponto.getDataHora(), registro) < 1)
-            new HorarioJaRegistradoException("Deve haver no mínimo 1 hora de almoço");
+            throw new HorarioJaRegistradoException("Deve haver no mínimo 1 hora de almoço");
 
         return montarRegistro(registro, true);
     }

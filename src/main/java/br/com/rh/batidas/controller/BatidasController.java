@@ -23,6 +23,6 @@ public class BatidasController {
     @PostMapping
     public ResponseEntity registrarHorario(@RequestParam String dataHora) {
         registroDePontoService.registrarPonto(LocalDateUtils.toConvertStringLocalDateTime(dataHora));
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 }

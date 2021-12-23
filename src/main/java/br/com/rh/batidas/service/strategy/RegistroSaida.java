@@ -12,7 +12,8 @@ public class RegistroSaida implements Registro{
     public RegistroDePonto validarRegistroDePonto(RegistroDePonto ponto, LocalDateTime registro) {
         if (ponto.getTipoRegistro().equals(TipoRegistroPonto.SAIDA))
             new HorarioJaRegistradoException("Apenas 4 horários podem ser registrados por dia");
-        return null;
+
+        return montarRegistro(registro, false);
     }
 
     @Override

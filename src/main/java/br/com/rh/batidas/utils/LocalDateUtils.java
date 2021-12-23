@@ -21,8 +21,8 @@ public class LocalDateUtils {
         return LocalDateTime.parse(date, formatter);
     }
 
-    public static Integer diferencaEntreHoras(LocalDateTime dtInicial, LocalDateTime dtFinal) {
+    public static Integer diferencaEntreHoras(LocalDateTime dtInicial, LocalDateTime dtFinal){
         Integer diferenca = dtInicial.getHour() - dtFinal.getHour();
-        return diferenca *(-1);
+        return diferenca * (-1);
     }
 }

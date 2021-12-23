@@ -9,6 +9,4 @@ public interface RegistroDePontoService {
     void registrarPonto(LocalDateTime horario);
 
     RegistroDePonto validarRegistroDePonto(LocalDateTime registro);
-
-    RegistroDePonto recuperarUltimoRegistroDePonto(LocalDateTime registro);
 }

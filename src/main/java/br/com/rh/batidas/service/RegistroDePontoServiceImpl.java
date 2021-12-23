@@ -22,15 +22,13 @@ public class RegistroDePontoServiceImpl implements RegistroDePontoService {
     @Override
     public void registrarPonto(LocalDateTime horario) {
         RegistroDePonto ponto = validarRegistroDePonto(horario);
-
         registroDePontoRepository.save(ponto);
     }
 
     @Override
     public RegistroDePonto validarRegistroDePonto(LocalDateTime registro) {
-
         if (LocalDateUtils.isFinalDeSemana(registro.toLocalDate()))
-            new FinalDeSemanaException("Sábado e domingo não são permitidos como dia de trabalho");
+            throw new FinalDeSemanaException("Sábado e domingo não são permitidos como dia de trabalho");
 
         RegistroDePonto ponto = registroDePontoRepository.findTop1ByDataHora(registro.toLocalDate());
         if (ponto == null) {
@@ -40,13 +38,6 @@ public class RegistroDePontoServiceImpl implements RegistroDePontoService {
         }
 
        return ponto.getTipoRegistro().registroDaBatida().validarRegistroDePonto(ponto, registro);
-
-    }
-
-
-    @Override
-    public RegistroDePonto recuperarUltimoRegistroDePonto(LocalDateTime registro) {
-        return null;
     }
 
 }
